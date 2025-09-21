@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\controller\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\controller\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\dtos\\todocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\dtos\\todocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\dtos\\todoupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\dtos\\todoupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\service\\todoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\service\\todoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\service\\itodoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\service\\itodoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\repository\\todorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\repository\\todorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\repository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\repository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\model\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\model\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|c:\\users\\usuario\\source\\repos\\todoapi\\todoapi\\todoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A25BEAA9-F8AB-48BD-A41D-9E359C9AFC73}|TodoAPI\\TodoAPI.csproj|solutionrelative:todoapi\\todoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Program.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Program.cs",
+              "RelativeToolTip": "TodoAPI\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:48:15.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TodoController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Controller\\TodoController.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Controller\\TodoController.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Controller\\TodoController.cs",
+              "RelativeToolTip": "TodoAPI\\Controller\\TodoController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwC0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:46:58.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TodoService.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Service\\TodoService.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Service\\TodoService.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Service\\TodoService.cs",
+              "RelativeToolTip": "TodoAPI\\Service\\TodoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:44:34.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ITodoService.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Service\\ITodoService.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Service\\ITodoService.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Service\\ITodoService.cs",
+              "RelativeToolTip": "TodoAPI\\Service\\ITodoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:43:58.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TodoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Repository\\TodoRepository.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Repository\\TodoRepository.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Repository\\TodoRepository.cs",
+              "RelativeToolTip": "TodoAPI\\Repository\\TodoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:41:21.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Repository\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Repository\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Repository\\IBaseRepository.cs",
+              "RelativeToolTip": "TodoAPI\\Repository\\IBaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:40:38.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TodoUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Dtos\\TodoUpdateDto.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Dtos\\TodoUpdateDto.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Dtos\\TodoUpdateDto.cs",
+              "RelativeToolTip": "TodoAPI\\Dtos\\TodoUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:40:13.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TodoCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Dtos\\TodoCreateDto.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Dtos\\TodoCreateDto.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Dtos\\TodoCreateDto.cs",
+              "RelativeToolTip": "TodoAPI\\Dtos\\TodoCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:40:00.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Todo.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Model\\Todo.cs",
+              "RelativeDocumentMoniker": "TodoAPI\\Model\\Todo.cs",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\Model\\Todo.cs",
+              "RelativeToolTip": "TodoAPI\\Model\\Todo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T14:39:40.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TodoAPI",
+              "DocumentMoniker": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\TodoAPI.csproj",
+              "RelativeDocumentMoniker": "TodoAPI\\TodoAPI.csproj",
+              "ToolTip": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\TodoAPI.csproj",
+              "RelativeToolTip": "TodoAPI\\TodoAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-21T14:38:13.889Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
