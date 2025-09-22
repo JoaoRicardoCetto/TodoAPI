@@ -14,8 +14,9 @@ onMounted(async () => {
   isLoading.value = true
 
   await todoStore.fetchTodos()
-  const storeTodos = todoStore.getTodos
-  console.log('TESTEEE', storeTodos)
+  //const storeTodos = todoStore.getTodos
+  //console.log('TESTEEE', storeTodos)
+  //É apenas para mostrar o spinner funcionando
   setTimeout(() => {
     isLoading.value = false
   }, 3000)
