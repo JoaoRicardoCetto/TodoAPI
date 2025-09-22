@@ -1,7 +1,6 @@
-using TodoAPI.Model;
-using TodoAPI.Repository;
-using TodoAPI.Service;
-
+using TodoAPI.Application.Repository;
+using TodoAPI.Application.Service;
+using TodoAPI.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 

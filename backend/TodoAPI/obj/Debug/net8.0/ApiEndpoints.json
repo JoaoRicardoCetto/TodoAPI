@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "TodoAPI.Controller.TodoController",
+    "ContainingType": "TodoAPI.Controller.Controllers.TodoController",
     "Method": "GetAll",
     "RelativePath": "api/Todo",
     "HttpMethod": "GET",
@@ -10,7 +10,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "TodoAPI.Controller.TodoController",
+    "ContainingType": "TodoAPI.Controller.Controllers.TodoController",
     "Method": "Create",
     "RelativePath": "api/Todo",
     "HttpMethod": "POST",
@@ -19,14 +19,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "TodoAPI.Dtos.TodoCreateDto",
+        "Type": "TodoAPI.Controller.Dtos.TodoCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "TodoAPI.Controller.TodoController",
+    "ContainingType": "TodoAPI.Controller.Controllers.TodoController",
     "Method": "GetById",
     "RelativePath": "api/Todo/{id}",
     "HttpMethod": "GET",
@@ -42,7 +42,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "TodoAPI.Controller.TodoController",
+    "ContainingType": "TodoAPI.Controller.Controllers.TodoController",
     "Method": "Update",
     "RelativePath": "api/Todo/{id}",
     "HttpMethod": "PUT",
@@ -56,14 +56,14 @@
       },
       {
         "Name": "dto",
-        "Type": "TodoAPI.Dtos.TodoUpdateDto",
+        "Type": "TodoAPI.Controller.Dtos.TodoUpdateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "TodoAPI.Controller.TodoController",
+    "ContainingType": "TodoAPI.Controller.Controllers.TodoController",
     "Method": "Delete",
     "RelativePath": "api/Todo/{id}",
     "HttpMethod": "DELETE",
@@ -79,7 +79,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "TodoAPI.Controller.TodoController",
+    "ContainingType": "TodoAPI.Controller.Controllers.TodoController",
     "Method": "Toggle",
     "RelativePath": "api/Todo/{id}/toggle",
     "HttpMethod": "PATCH",
