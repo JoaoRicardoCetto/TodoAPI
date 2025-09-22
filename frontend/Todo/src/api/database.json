@@ -1,0 +1,39 @@
+{
+  "todos": [
+    {
+      "completo": true,
+      "descricao": "Estudar TypeScript",
+      "id": "1"
+    },
+    {
+      "completo": false,
+      "descricao": "Estudar Vuex",
+      "id": "2"
+    },
+    {
+      "completo": false,
+      "descricao": "Estudar GraphQL",
+      "id": "3"
+    },
+    {
+      "completo": false,
+      "descricao": "Estudar Node.js",
+      "id": "4"
+    },
+    {
+      "completo": false,
+      "descricao": "Estudar MongoDB",
+      "id": "8d4d"
+    },
+    {
+      "completo": false,
+      "descricao": "Estudar Express",
+      "id": "9fa3"
+    },
+    {
+      "id": "b9df",
+      "descricao": "Teste",
+      "completo": false
+    }
+  ]
+}
