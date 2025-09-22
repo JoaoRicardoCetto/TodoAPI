@@ -341,11 +341,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\TodoAPI.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\TodoAPI.csproj",
       "projectName": "TodoAPI",
-      "projectPath": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\TodoAPI.csproj",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\TodoAPI.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\source\\repos\\TodoAPI\\TodoAPI\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
