@@ -2,8 +2,8 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import type { itemTodo } from '@/api/itemType'
 
-//const entityTodoApi = 'https://localhost:7062/api/Todo'
-const entityTodoMock = 'http://localhost:3000/todos'
+const entityTodoApi = 'http://localhost:5132/api/Todo'
+//const entityTodoMock = 'http://localhost:3000/todos'
 
 export const useTodoStore = defineStore('todo', {
   state: () => ({
@@ -17,7 +17,7 @@ export const useTodoStore = defineStore('todo', {
   actions: {
     async fetchTodos() {
       try {
-        const response = await axios.get<itemTodo[]>(`${entityTodoMock}`)
+        const response = await axios.get<itemTodo[]>(`${entityTodoApi}`)
         this.todos = response.data
       } catch (error) {
         console.error('There was an error!', error)
@@ -30,7 +30,7 @@ export const useTodoStore = defineStore('todo', {
 
     async addTodo(data: { descricao: string }) {
       try {
-        const response = await axios.post<itemTodo>(`${entityTodoMock}`, {
+        const response = await axios.post<itemTodo>(`${entityTodoApi}`, {
           ...data,
           completo: false,
         })
@@ -45,7 +45,7 @@ export const useTodoStore = defineStore('todo', {
 
     async updateTodo(id: string, data: Partial<itemTodo>) {
       try {
-        await axios.patch(`${entityTodoMock}/${id}`, data)
+        await axios.patch(`${entityTodoApi}/${id}`, data)
 
         const todo = this.todos.find((todo) => todo.id === id)
         if (todo) Object.assign(todo, data)
