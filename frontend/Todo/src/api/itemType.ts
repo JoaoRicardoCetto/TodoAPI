@@ -1,5 +1,5 @@
 export interface itemTodo {
-  id: number
+  id: string
   descricao: string
   completo: boolean
 }
