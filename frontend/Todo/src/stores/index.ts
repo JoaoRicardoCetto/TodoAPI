@@ -45,12 +45,41 @@ export const useTodoStore = defineStore('todo', {
 
     async updateTodo(id: string, data: Partial<itemTodo>) {
       try {
-        await axios.patch(`${entityTodoApi}/${id}`, data)
+        // filtra propriedades undefined para não enviar chaves desnecessárias
+        const payload = Object.fromEntries(
+          Object.entries(data).filter(([, v]) => v !== undefined),
+        ) as Partial<itemTodo>
+
+        if (Object.keys(payload).length === 0) return
+
+        await axios.put<itemTodo>(`${entityTodoApi}/${id}`, payload)
 
         const todo = this.todos.find((todo) => todo.id === id)
-        if (todo) Object.assign(todo, data)
+        if (todo) Object.assign(todo, payload)
       } catch (error) {
         console.error('Erro ao atualizar todo:', error)
+      }
+    },
+
+    async updateToggleTodo(id: string, completo: boolean) {
+      try {
+        await axios.patch(`${entityTodoApi}/${id}/toggle`, { completo })
+
+        const todo = this.todos.find((todo) => todo.id === id)
+
+        if (todo) todo.completo = completo
+      } catch (error) {
+        console.error('Erro ao atualizar toggle do todo:', error)
+      }
+    },
+
+    async deleteTodo(id: string) {
+      try {
+        await axios.delete(`${entityTodoApi}/${id}`)
+
+        this.todos = this.todos.filter((todo) => todo.id !== id)
+      } catch (error) {
+        console.error('Erro ao deletar todo:', error)
       }
     },
   },
