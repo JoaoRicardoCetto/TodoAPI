@@ -24,17 +24,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TodoCreateDto"
+                "$ref": "#/components/schemas/TodoDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/TodoCreateDto"
+                "$ref": "#/components/schemas/TodoDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/TodoCreateDto"
+                "$ref": "#/components/schemas/TodoDto"
               }
             }
           }
@@ -87,17 +87,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TodoUpdateDto"
+                "$ref": "#/components/schemas/TodoDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/TodoUpdateDto"
+                "$ref": "#/components/schemas/TodoDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/TodoUpdateDto"
+                "$ref": "#/components/schemas/TodoDto"
               }
             }
           }
@@ -156,21 +156,7 @@
   },
   "components": {
     "schemas": {
-      "TodoCreateDto": {
-        "type": "object",
-        "properties": {
-          "descricao": {
-            "type": "string",
-            "nullable": true
-          },
-          "completo": {
-            "type": "boolean",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "TodoUpdateDto": {
+      "TodoDto": {
         "type": "object",
         "properties": {
           "descricao": {
