@@ -58,10 +58,14 @@ namespace TodoAPI.Controller.Controllers
         // Parâmetro dto: Dados da tarefa a ser criada
         // Retorna tarefa criada (201) ou erro de validação (400)
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] TodoCreateDto dto)
+        public async Task<IActionResult> Create([FromBody] TodoDto dto)
         {
             try
             {
+                // Validação: para criação, a descrição é obrigatória
+                if (string.IsNullOrWhiteSpace(dto.Descricao))
+                    return BadRequest(new { message = "Descrição é obrigatória" });
+                
                 // Cria a tarefa usando o serviço
                 var todo = await _service.CreateAsync(dto.Descricao, dto.Completo ?? false);
                 
@@ -83,7 +87,7 @@ namespace TodoAPI.Controller.Controllers
         // Parâmetro dto: Dados atualizados da tarefa
         // Retorna Sucesso (204) ou não encontrada (404) ou erro de validação (400)
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] TodoUpdateDto dto)
+        public async Task<IActionResult> Update(Guid id, [FromBody] TodoDto dto)
         {
             try
             {
