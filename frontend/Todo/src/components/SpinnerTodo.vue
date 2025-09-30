@@ -1,9 +1,5 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div class="text-center">
-    <img src="@/assets/spinner.svg" alt="" class="inline-block w-5 h-5" />
+  <div class="flex justify-center items-center h-24">
+    <img src="@/assets/spinner.svg" alt="Loading..." class="w-8 h-8 animate-spin" />
   </div>
 </template>
-
-<style scoped></style>
