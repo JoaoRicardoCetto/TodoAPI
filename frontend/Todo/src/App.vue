@@ -3,6 +3,8 @@ import SpinnerTodo from './components/SpinnerTodo.vue'
 import FormTodo from './components/FormTodo.vue'
 import ListaTodo from './components/ListaTodo.vue'
 import VazioTodo from './components/VazioTodo.vue'
+import LogoLeds from './components/LogoLeds.vue'
+
 import './assets/main.css'
 import { onMounted, ref } from 'vue'
 import { useTodoStore } from '@/stores'
@@ -14,9 +16,7 @@ onMounted(async () => {
   isLoading.value = true
 
   await todoStore.fetchTodos()
-  //const storeTodos = todoStore.getTodos
-  //console.log('TESTEEE', storeTodos)
-  //É apenas para mostrar o spinner funcionando
+
   setTimeout(() => {
     isLoading.value = false
   }, 3000)
@@ -24,16 +24,19 @@ onMounted(async () => {
 </script>
 
 <template>
-  <body class="bg-gray-800">
-    <div class="px-3 py-10 md:px-10">
-      <div class="w-full sm:w-2/3 lg:w-3/2 mx-auto">
-        <SpinnerTodo v-if="isLoading" />
+  <div class="min-h-screen flex flex-col items-center justify-center bg-[#211b15] px-4">
+    <LogoLeds />
+    <div class="w-full max-w-md flex flex-col items-center">
+      <FormTodo class="w-full" />
+      <div class="w-full mt-2">
+        <template v-if="isLoading">
+          <SpinnerTodo />
+        </template>
         <template v-else>
-          <FormTodo />
-          <ListaTodo />
-          <VazioTodo v-if="!todoStore.getTodos.length" />
+          <ListaTodo v-if="todoStore.getTodos.length > 0" />
+          <VazioTodo v-else />
         </template>
       </div>
     </div>
-  </body>
+  </div>
 </template>

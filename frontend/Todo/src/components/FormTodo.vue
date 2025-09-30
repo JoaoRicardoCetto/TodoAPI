@@ -19,19 +19,20 @@ async function addNovaTarefa() {
 </script>
 
 <template>
-  <form
-    @submit.prevent="addNovaTarefa"
-    class="flex items-center px-4 bg-gray-900 h-15 rounded-sm border-l-2 border-green-400 mb-3"
-  >
-    <input
-      v-model="descricao"
-      placeholder="Adicione um novo item ..."
-      type="text"
-      class="bg-gray-900 placeholder-gray-500 text-gray-500 font-light focus:outline-none block w-full appearance-none leading-normal py-3 pr-3"
-    />
-
-    <button class="text-green-400 text-xs font-semibold focus:outline-none" type="submit">
-      ADICIONAR
-    </button>
+  <form @submit.prevent="addNovaTarefa" class="flex items-center h-15 rounded-sm mb-3">
+    <div class="flex flex-row items-center bg-[#e2e3eb] rounded-lg mb-2 px-2 py-2 w-full gap-2">
+      <input
+        v-model="descricao"
+        placeholder="Adicione uma nova tarefa aqui ..."
+        type="text"
+        class="flex-1 min-w-0 text-[#000000] text-base placeholder-[#211b15] px-2 py-1 rounded-sm appearance-none bg-transparent outline-none"
+      />
+      <button
+        class="w-fit text-[#009439] px-2 py-1 text-base font-semibold hover:cursor-pointer appearance-none rounded-l-lg rounded-r-lg border-l-4 border-l-[#34236e] border-r-4 border-r-[#de0025]"
+        type="submit"
+      >
+        ADICIONAR
+      </button>
+    </div>
   </form>
 </template>
