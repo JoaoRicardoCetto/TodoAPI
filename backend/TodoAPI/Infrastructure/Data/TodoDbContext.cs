@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TodoAPI.Domain;
 
-namespace TodoAPI.Application.Data
+namespace TodoAPI.Infrastructure.Data
 {
     // Contexto do banco de dados para gerenciar as tarefas
     public class TodoDbContext : DbContext
@@ -11,7 +11,7 @@ namespace TodoAPI.Application.Data
         }
 
         // Define a tabela de tarefas no banco
-        public DbSet<Todo> Todos { get; set; }
+        public DbSet<Todo> Todo { get; set; }
 
         // Configuração do modelo de dados
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace TodoAPI.Application.Data
                       .HasDefaultValue(false);
 
                 // Definir o nome da tabela
-                entity.ToTable("Todos");
+                entity.ToTable("Todo");
             });
         }
     }

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using TodoAPI.Application.Data;
-using TodoAPI.Application.Repository;
+using TodoAPI.Infrastructure.Data;
+using TodoAPI.Infrastructure.Repository;
 using TodoAPI.Application.Service;
 using TodoAPI.Domain;
 

@@ -27,18 +27,20 @@ Uma API REST que permite:
 
 ## 🏗️ Como funciona a arquitetura?
 
-Nossa aplicação tem 3 partes principais:
+Nossa aplicação tem 4 partes principais:
 
 ```
 📁 TodoAPI/
 ├── 🎯 Domain/          # O que é uma tarefa
 ├── 🔧 Application/     # Como gerenciar tarefas
+├── 🏗️ Infrastructure/  # Como acessar dados
 └── 🌐 Presentation/    # Como acessar via internet
 ```
 
 ### O que cada parte faz:
 - **Domain**: Define o que é uma tarefa (id, descrição, se está completa)
 - **Application**: Contém as regras de negócio (criar, buscar, atualizar, remover)
+- **Infrastructure**: Implementa acesso a dados (repositories, banco de dados, migrations)
 - **Presentation**: Cria os endpoints da API (GET, POST, PUT, DELETE)
 
 ## 📂 Estrutura do Projeto
@@ -48,20 +50,21 @@ TodoAPI/
 ├── Domain/
 │   └── Todo.cs                    # O que é uma tarefa
 ├── Application/
+│   └── Service/
+│       ├── ITodoService.cs        # O que podemos fazer com tarefas
+│       └── TodoService.cs         # Como fazer essas operações
+├── Infrastructure/
 │   ├── Data/
 │   │   └── TodoDbContext.cs       # Configuração do banco de dados
 │   ├── Repository/
 │   │   ├── IBaseRepository.cs     # Como salvar/buscar dados
 │   │   └── TodoDbRepository.cs    # Repositório para PostgreSQL
-│   └── Service/
-│       ├── ITodoService.cs        # O que podemos fazer com tarefas
-│       └── TodoService.cs         # Como fazer essas operações
+│   └── Migrations/                # Migrações do banco de dados
 ├── Presentation/
 │   ├── Controllers/
 │   │   └── TodoController.cs      # Endpoints da API
 │   └── Dtos/
 │       └── TodoDto.cs             # Dados que vêm da internet
-├── Migrations/                    # Migrações do banco de dados
 ├── Program.cs                     # Configuração da aplicação
 └── TodoAPI.csproj                # Arquivo do projeto
 ```
@@ -101,10 +104,10 @@ namespace TodoAPI.Domain
 
 ### Passo 3: Como Salvar e Buscar Dados
 
-Crie a interface `IBaseRepository` na pasta `Application/Repository/`:
+Crie a interface `IBaseRepository` na pasta `Infrastructure/Repository/`:
 
 ```csharp
-namespace TodoAPI.Application.Repository
+namespace TodoAPI.Infrastructure.Repository
 {   
     // Define as operações básicas para trabalhar com dados
     public interface IBaseRepository<T>
@@ -131,13 +134,13 @@ namespace TodoAPI.Application.Repository
 
 ### Passo 4: Configurar o Banco de Dados
 
-Crie o `TodoDbContext` na pasta `Application/Data/`:
+Crie o `TodoDbContext` na pasta `Infrastructure/Data/`:
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
 using TodoAPI.Domain;
 
-namespace TodoAPI.Application.Data
+namespace TodoAPI.Infrastructure.Data
 {
     // Contexto do banco de dados para gerenciar as tarefas
     public class TodoDbContext : DbContext
@@ -175,14 +178,14 @@ namespace TodoAPI.Application.Data
 
 ### Passo 5: Implementar o Repositório
 
-Implemente o `TodoDbRepository` na pasta `Application/Repository/`:
+Implemente o `TodoDbRepository` na pasta `Infrastructure/Repository/`:
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
-using TodoAPI.Application.Data;
+using TodoAPI.Infrastructure.Data;
 using TodoAPI.Domain;
 
-namespace TodoAPI.Application.Repository
+namespace TodoAPI.Infrastructure.Repository
 {
     // Implementa o repositório para salvar tarefas no banco de dados
     public class TodoDbRepository : IBaseRepository<Todo>
@@ -276,7 +279,7 @@ namespace TodoAPI.Application.Service
 Implemente o `TodoService` na pasta `Application/Service/`:
 
 ```csharp
-using TodoAPI.Application.Repository;
+using TodoAPI.Infrastructure.Repository;
 using TodoAPI.Domain;
 
 namespace TodoAPI.Application.Service
@@ -499,7 +502,8 @@ namespace TodoAPI.Controller.Controllers
 Configure o `Program.cs`:
 
 ```csharp
-using TodoAPI.Application.Repository;
+using TodoAPI.Infrastructure.Data;
+using TodoAPI.Infrastructure.Repository;
 using TodoAPI.Application.Service;
 using TodoAPI.Domain;
 
@@ -585,14 +589,14 @@ app.Run();
 #### **1. Abrir pgAdmin**
 
 - **Windows:** Procure por "pgAdmin 4" no menu iniciar
-- **Primeira execução:** Digite a senha do postgres
+- **Primeira execução:** Digite a senha: postgres
 
 #### **2. Conectar ao Servidor**
 
 1. **Clique com botão direito** em "Servers" → "Create" → "Server"
 2. **General Tab:**
    ```
-   Name: TodoAPI Local
+   Name: TodoAPILocal
    ```
 3. **Connection Tab:**
    ```
@@ -606,7 +610,7 @@ app.Run();
 
 #### **3. Criar o Banco de Dados**
 
-1. **Clique com botão direito** em "TodoAPI Local" → "Create" → "Database"
+1. **Clique com botão direito** em "TodoAPILocal" → "Create" → "Database"
 2. **Database:**
    ```
    Database: TodoDB
@@ -617,7 +621,7 @@ app.Run();
 ### 🚀 Criação de Migrações
 
 #### **1. Instalar Entity Framework Tools**
-
+Abra o terminal do Visual Studio (Ctrl + ") ou use o PowerShell e digite os comandos:
 ```bash
 # Instalar ferramentas do EF Core globalmente
 dotnet tool install --global dotnet-ef
@@ -661,7 +665,7 @@ dotnet ef database update
 2. **Você deve ver:** A tabela `todos` criada
 3. **Clique com botão direito** em `todos` → "View/Edit Data" → "All Rows"
 
-### 🔄 Comandos de Migração Úteis
+### 🔄 CURIOSIDADE - Comandos de Migração Úteis
 
 #### **Criar Nova Migração**
 ```bash
@@ -694,69 +698,6 @@ dotnet ef database drop
 dotnet ef database update
 ```
 
-### 🎯 Estrutura Final do Banco
-
-Após aplicar as migrações, o banco `TodoDB` terá:
-
-#### **Tabela `todos`:**
-```sql
-CREATE TABLE "Todos" (
-    "Id" uuid NOT NULL PRIMARY KEY,
-    "Descricao" varchar(500) NOT NULL,
-    "Completo" boolean NOT NULL DEFAULT false
-);
-```
-
-#### **Campos:**
-- **`Id`**: UUID (chave primária, gerado automaticamente)
-- **`Descricao`**: String, máximo 500 caracteres, obrigatório
-- **`Completo`**: Boolean, padrão `false`
-
-### 🧪 Testando a Configuração
-
-#### **1. Via pgAdmin**
-1. **Clique com botão direito** em `todos` → "View/Edit Data"
-2. **Adicione um registro** manualmente para testar
-3. **Execute:** `SELECT * FROM "Todos";`
-
-#### **2. Via psql (linha de comando)**
-```bash
-# Conectar ao banco
-psql -h localhost -U postgres -d TodoDB
-
-# Verificar tabela
-\dt
-
-# Ver dados
-SELECT * FROM "Todos";
-
-# Sair
-\q
-```
-
-## 🗄️ Banco de Dados
-
-### PostgreSQL
-
-Nossa aplicação usa **PostgreSQL** como banco de dados para persistir as tarefas:
-
-- ✅ **Dados permanecem** mesmo após reiniciar a aplicação
-- ✅ **Escalável** para muitos usuários
-- ✅ **Confiável** para produção
-
-### Estrutura do Banco
-
-A tabela `Todos` é criada automaticamente com:
-- `Id` (Guid) - Chave primária
-- `Descricao` (string, máximo 500 caracteres) - Descrição da tarefa
-- `Completo` (boolean) - Se a tarefa está completa
-
-### Migrações
-
-As migrações controlam a estrutura do banco:
-- **Criar**: `dotnet ef migrations add NomeDaMigracao`
-- **Aplicar**: `dotnet ef database update`
-- **Ver status**: `dotnet ef migrations list`
 
 ## ⚙️ Como executar?
 
@@ -765,12 +706,6 @@ As migrações controlam a estrutura do banco:
 - PostgreSQL instalado localmente
 - pgAdmin 4 configurado
 
-### 1. Configurar o Banco via pgAdmin
-
-Siga os passos da seção [Configuração do PostgreSQL](#-configuração-do-postgresql) para:
-- ✅ Instalar PostgreSQL
-- ✅ Configurar pgAdmin
-- ✅ Criar o banco `TodoDB`
 
 ### 2. Configurar o Projeto
 
@@ -794,21 +729,6 @@ Edite o arquivo `appsettings.json`:
 }
 ```
 
-### 4. Criar e Aplicar Migrações
-
-```bash
-# Criar migração inicial
-dotnet ef migrations add InitialCreate
-
-# Aplicar migração no banco
-dotnet ef database update
-```
-
-### 5. Verificar no pgAdmin
-
-1. **Abra pgAdmin**
-2. **Expanda:** TodoAPI Local → Databases → TodoDB → Schemas → public → Tables
-3. **Verifique:** A tabela `todos` foi criada
 
 ### 6. Executar a Aplicação
 
@@ -832,10 +752,6 @@ A aplicação estará disponível em:
 - **HTTP**: `http://localhost:5000`
 - **HTTPS**: `https://localhost:5001`
 - **Swagger UI**: `https://localhost:5001/swagger`
-
-### 📋 Configuração Detalhada
-
-- **[POSTGRES_LOCAL_SETUP.md](POSTGRES_LOCAL_SETUP.md)** - Tutorial completo para instalação local do PostgreSQL e configuração via pgAdmin
 
 
 ## 🔗 Testando a API

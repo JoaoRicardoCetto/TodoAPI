@@ -12,7 +12,7 @@ namespace TodoAPI.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Todos",
+                name: "Todo",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -21,7 +21,7 @@ namespace TodoAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Todos", x => x.Id);
+                    table.PrimaryKey("PK_Todo", x => x.Id);
                 });
         }
 
@@ -29,7 +29,7 @@ namespace TodoAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Todos");
+                name: "Todo");
         }
     }
 }

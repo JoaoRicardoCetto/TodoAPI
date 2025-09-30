@@ -1,4 +1,4 @@
-﻿using TodoAPI.Application.Repository;
+﻿using TodoAPI.Infrastructure.Repository;
 using TodoAPI.Domain;
 
 namespace TodoAPI.Application.Service

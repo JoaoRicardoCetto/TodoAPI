@@ -1,4 +1,4 @@
-﻿namespace TodoAPI.Application.Repository
+﻿namespace TodoAPI.Infrastructure.Repository
 {   
     // Define as operações básicas para trabalhar com dados
     public interface IBaseRepository<T>

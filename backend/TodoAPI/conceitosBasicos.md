@@ -184,7 +184,7 @@ Imagine um prédio de 3 andares:
 - **2º Andar (Application)** = Escritórios (onde o trabalho é feito)
 - **1º Andar (Domain)** = Fundamentos (regras básicas)
 
-### As 3 Camadas da TodoAPI
+### As 4 Camadas da TodoAPI
 
 #### 🎯 **Domain** (Fundação)
 - **O que faz**: Define "o que é uma tarefa"
@@ -193,8 +193,13 @@ Imagine um prédio de 3 andares:
 
 #### 🔧 **Application** (Lógica de Negócio)
 - **O que faz**: Implementa as regras de negócio
-- **Contém**: Services e Repositories
+- **Contém**: Services
 - **Depende** apenas do Domain
+
+#### 🏗️ **Infrastructure** (Infraestrutura)
+- **O que faz**: Implementa acesso a dados e configurações externas
+- **Contém**: Repositories, DbContext, Migrations
+- **Depende** do Domain
 
 #### 🌐 **Presentation** (Interface)
 - **O que faz**: Expõe a API para o mundo
@@ -204,9 +209,9 @@ Imagine um prédio de 3 andares:
 ### Fluxo de Dados
 
 ```
-Cliente → Presentation → Application → Domain
+Cliente → Presentation → Application → Infrastructure → Domain
                    ↓
-Cliente ← Presentation ← Application ← Domain
+Cliente ← Presentation ← Application ← Infrastructure ← Domain
 ```
 
 ---
