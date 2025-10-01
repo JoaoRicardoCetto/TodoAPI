@@ -2,7 +2,6 @@
 import { defineProps, defineEmits } from 'vue'
 
 const props = defineProps({
-  // allows passing string, array or object class bindings
   extraClass: { type: [String, Object, Array], default: '' },
   title: { type: String, default: '' },
 })
@@ -23,7 +22,3 @@ function onClick(e: Event) {
     <slot />
   </button>
 </template>
-
-<style scoped>
-/* keep styles minimal; visuals are controlled by passed classes */
-</style>
