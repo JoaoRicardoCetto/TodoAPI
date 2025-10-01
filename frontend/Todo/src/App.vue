@@ -24,7 +24,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center bg-[#211b15] px-4">
+  <div class="min-h-screen flex flex-col items-center justify-center bg-[#e2e3eb] px-4">
     <LogoLeds />
     <div class="w-full max-w-md flex flex-col items-center">
       <FormTodo class="w-full" />

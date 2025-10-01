@@ -20,7 +20,7 @@ async function addNovaTarefa() {
 
 <template>
   <form @submit.prevent="addNovaTarefa" class="flex items-center h-15 rounded-sm mb-3">
-    <div class="flex flex-row items-center bg-[#e2e3eb] rounded-lg mb-2 px-2 py-2 w-full gap-2">
+    <div class="flex flex-row items-center bg-[#cacdda] rounded-lg mb-2 px-2 py-2 w-full gap-2">
       <input
         v-model="descricao"
         placeholder="Adicione uma nova tarefa aqui ..."
