@@ -609,6 +609,8 @@ Edite o arquivo `appsettings.json`:
 
 ### 📦 Instalação do PostgreSQL
 
+Se o PostgreSQL não estiver instalado em sua máquina, siga o passo a passo abaixo para realizar a instalação.
+
 #### **1. Download e Instalação**
 1. **Acesse:** https://www.postgresql.org/download
 2. Selecione seu sistema operacional
@@ -748,10 +750,21 @@ dotnet ef database update
 
 
 
-### 7. Acessar a API
+### 7. Executar a API
+1. Com o **pgAdmin4** aberto, vá até sua solução (**Solução 'TodoAPI'**) no Visual Studio.  
+2. No menu de execução, mude a opção **https** para **http** clicando na seta pra baixo:  
 
-A aplicação estará disponível em:
+   <img width="195" height="129" alt="Selecionar http" src="https://github.com/user-attachments/assets/02298aa0-cfa8-424d-9502-0c2bb70f4379" />  
+
+3. Para executar a API, clique no botão **Executar** (seta verde):  
+
+   <img width="195" height="129" alt="Botão executar" src="https://github.com/user-attachments/assets/4774dfa9-92f6-4cc6-87e0-57ba5e625df7" />  
+
+
+A API será iniciada e estará disponível em uma URL similar a:
 - **HTTP**: `http://localhost:5000`
+
+Para testar as requisições da API e a conexão com o banco, acesse o swagger em:
 - **Swagger UI**: `https://localhost:5001/swagger` (interface para testar a API)
 
 
@@ -790,3 +803,4 @@ A aplicação estará disponível em:
 
 
 **🎉 Parabéns!** Você criou sua primeira API REST com .NET 8!
+
