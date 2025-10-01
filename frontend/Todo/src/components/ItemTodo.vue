@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineProps, ref, nextTick } from 'vue'
 import ModalDelete from './ModalDelete.vue'
+import IconButton from './IconButton.vue'
 import type { itemTodo } from '@/api/itemType'
 import { useTodoStore } from '@/stores/useTodoStore'
 
@@ -62,9 +63,8 @@ function handleCancelar() {
   <div class="bg-[#e2e3eb] rounded-lg relative">
     <div class="flex items-center px-4 py-3 border-b border-gray-400 last:border-b-0">
       <div class="flex items-center justify-center mr-2">
-        <button
-          class="hover:cursor-pointer"
-          :class="{ 'text-gray-600': !isCompleted, 'text-green-400': isCompleted }"
+        <IconButton
+          :extraClass="{ 'text-gray-600': !isCompleted, 'text-green-400': isCompleted }"
           @click="onCheckClick"
         >
           <svg
@@ -81,7 +81,7 @@ function handleCancelar() {
               d="M5 13l4 4L19 7"
             ></path>
           </svg>
-        </button>
+        </IconButton>
       </div>
 
       <div class="w-full">
@@ -113,9 +113,9 @@ function handleCancelar() {
       </div>
 
       <div class="ml-auto flex items-center justify-center">
-        <button class="focus:outline-none hover:cursor-pointer group" @click="onUpdateClick">
+        <IconButton extraClass="group ml-3" @click="onUpdateClick">
           <svg
-            class="ml-3 h-4 w-4 text-gray-500 group-hover:text-blue-500 transition-colors duration-200"
+            class="h-4 w-4 text-gray-500 group-hover:text-blue-500 transition-colors duration-200"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -127,13 +127,13 @@ function handleCancelar() {
             <path d="M12 20h9" />
             <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19.5 3 21l1.5-4L16.5 3.5z" />
           </svg>
-        </button>
+        </IconButton>
       </div>
 
       <div class="ml-auto flex items-center justify-center">
-        <button class="focus:outline-none hover:cursor-pointer group" @click="onDeleteClick">
+        <IconButton extraClass="group ml-3" @click="onDeleteClick">
           <svg
-            class="ml-3 h-4 w-4 text-gray-500 group-hover:text-[#de0025] transition-colors duration-200"
+            class="h-4 w-4 text-gray-500 group-hover:text-[#de0025] transition-colors duration-200"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -146,7 +146,7 @@ function handleCancelar() {
               stroke-linejoin="round"
             />
           </svg>
-        </button>
+        </IconButton>
       </div>
     </div>
     <ModalDelete
