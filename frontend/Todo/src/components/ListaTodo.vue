@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ItemToDo from './ItemTodo.vue'
-import { useTodoStore } from '@/stores'
+import { useTodoStore } from '@/stores/useTodoStore'
 
 const todoStore = useTodoStore()
 </script>

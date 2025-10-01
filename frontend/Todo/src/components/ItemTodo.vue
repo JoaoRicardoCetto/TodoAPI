@@ -2,7 +2,7 @@
 import { defineProps, ref, nextTick } from 'vue'
 import ModalDelete from './ModalDelete.vue'
 import type { itemTodo } from '@/api/itemType'
-import { useTodoStore } from '@/stores'
+import { useTodoStore } from '@/stores/useTodoStore'
 
 const props = defineProps<{
   todo: itemTodo
@@ -26,14 +26,12 @@ function onDeleteClick() {
 
 function onUpdateClick() {
   if (!isEditing.value) {
-    // entrar em modo edição
     descricaoEdit.value = props.todo.descricao
     isEditing.value = true
     nextTick(() => {
       inputRef.value?.focus()
     })
   } else {
-    // cancelar edição ao clicar novamente no botão de editar
     isEditing.value = false
     descricaoEdit.value = props.todo.descricao
   }

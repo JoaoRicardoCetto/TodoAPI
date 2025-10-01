@@ -20,7 +20,7 @@ export const useTodoStore = defineStore('todo', {
         const response = await axios.get<itemTodo[]>(`${entityTodoApi}`)
         this.todos = response.data
       } catch (error) {
-        console.error('There was an error!', error)
+        console.error('Erro ao carregar lista de tarefas!', error)
       }
     },
 
@@ -37,15 +37,14 @@ export const useTodoStore = defineStore('todo', {
 
         this.todos.push(response.data)
 
-        console.log('Todo adicionado:', response.data)
+        console.log('Tarefa adicionada:', response.data)
       } catch (error) {
-        console.error('Erro ao adicionar todo:', error)
+        console.error('Erro ao adicionar tarefa:', error)
       }
     },
 
     async updateTodo(id: string, data: Partial<itemTodo>) {
       try {
-        // filtra propriedades undefined para não enviar chaves desnecessárias
         const payload = Object.fromEntries(
           Object.entries(data).filter(([, v]) => v !== undefined),
         ) as Partial<itemTodo>
@@ -57,7 +56,7 @@ export const useTodoStore = defineStore('todo', {
         const todo = this.todos.find((todo) => todo.id === id)
         if (todo) Object.assign(todo, payload)
       } catch (error) {
-        console.error('Erro ao atualizar todo:', error)
+        console.error('Erro ao atualizar tarefa:', error)
       }
     },
 
@@ -69,7 +68,7 @@ export const useTodoStore = defineStore('todo', {
 
         if (todo) todo.completo = completo
       } catch (error) {
-        console.error('Erro ao atualizar toggle do todo:', error)
+        console.error('Erro ao atualizar check da tarefa:', error)
       }
     },
 
@@ -79,7 +78,7 @@ export const useTodoStore = defineStore('todo', {
 
         this.todos = this.todos.filter((todo) => todo.id !== id)
       } catch (error) {
-        console.error('Erro ao deletar todo:', error)
+        console.error('Erro ao deletar tarefa:', error)
       }
     },
   },
