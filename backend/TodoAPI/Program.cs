@@ -1,4 +1,6 @@
-using TodoAPI.Application.Repository;
+using Microsoft.EntityFrameworkCore;
+using TodoAPI.Infrastructure.Data;
+using TodoAPI.Infrastructure.Repository;
 using TodoAPI.Application.Service;
 using TodoAPI.Domain;
 
@@ -40,15 +42,13 @@ builder.Services.AddCors(options =>
 });
 #endregion
 
-// Configuração de Dependency Injection (Injeção de Dependência).
-// Registra os serviços no container DI para serem injetados automaticamente.
+// Configuração do banco de dados PostgreSQL
+builder.Services.AddDbContext<TodoDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Service Lifetimes:
-// - Singleton: uma única instância durante toda a vida da aplicação
-// - Scoped: uma instância por requisição HTTP
-// - Transient: uma nova instância a cada solicitação
-builder.Services.AddSingleton<IBaseRepository<Todo>, TodoRepository>(); // Singleton para o repositório (dados em memória)
-builder.Services.AddScoped<ITodoService, TodoService>(); // Scoped para o serviço (uma instância por requisição)
+// Configuração de Dependency Injection
+builder.Services.AddScoped<IBaseRepository<Todo>, TodoDbRepository>();
+builder.Services.AddScoped<ITodoService, TodoService>();
 
 // Constrói a aplicação
 var app = builder.Build();
