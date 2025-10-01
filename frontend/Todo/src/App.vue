@@ -7,7 +7,7 @@ import LogoLeds from './components/LogoLeds.vue'
 
 import './assets/main.css'
 import { onMounted, ref } from 'vue'
-import { useTodoStore } from '@/stores'
+import { useTodoStore } from '@/stores/useTodoStore'
 
 const todoStore = useTodoStore()
 const isLoading = ref(false)
