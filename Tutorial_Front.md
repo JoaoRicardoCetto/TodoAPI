@@ -590,3 +590,4 @@ O projeto está configurado para se conectar com uma API em `http://localhost:51
 **🎉 Parabéns! Você criou uma aplicação Todo completa com Vue 3, TypeScript e Tailwind CSS!**
 
 *Desenvolvido com ❤️ para aprendizado através de copiar e colar.*
+
