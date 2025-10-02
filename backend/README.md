@@ -682,6 +682,16 @@ Com o terminal aberto, digite os comandos
 ```bash
 #Acessa a pasta do projeto
 cd TodoAPI
+#Instala as dependências necessárias
+dotnet tool install --global dotnet-ef
+```
+
+Agora reinicie o Visual Studio e abra novamente o projeto 
+
+Com o Projeto aberto, clique com o botão direito no projeto TodoAPI e clique em recompilar:
+<img width="538" height="368" alt="image" src="https://github.com/user-attachments/assets/4051db66-ee8a-4f3b-9a45-8f596777cd75" />
+
+```bash
 #Compila e constrói a aplicação
 dotnet build
 # Criar a primeira migração
@@ -803,4 +813,5 @@ Para testar as requisições da API e a conexão com o banco, acesse o swagger e
 
 
 **🎉 Parabéns!** Você criou sua primeira API REST com .NET 8!
+
 
