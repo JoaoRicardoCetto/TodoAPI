@@ -18,7 +18,10 @@ npm create vue@latest oficina
 # ❌ Vitest (pode pular)
 # ❌ End-to-End Testing (pode pular)
 
+# Entre na pasta do projeto criado
 cd oficina
+
+# Instale as depêndencias do projeto
 npm install
 ```
 
@@ -340,4 +343,5 @@ Continue praticando e evoluindo este projeto. O desenvolvimento web é uma jorna
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Pinia Docs](https://pinia.vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+
 
