@@ -75,7 +75,7 @@ export interface itemTodo {
 **Por que TypeScript?**
 - Evita bugs
 - Facilita desenvolvimento
-- Documenta o código automaticamente
+- Torna o projeto mais escalável
 
 ## FASE 3: Gerenciamento de Estado (Pinia)
 
@@ -343,5 +343,6 @@ Continue praticando e evoluindo este projeto. O desenvolvimento web é uma jorna
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Pinia Docs](https://pinia.vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+
 
 
