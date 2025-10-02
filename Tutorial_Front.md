@@ -20,13 +20,15 @@ Abra o terminal e execute os comandos abaixo:
 
 ```bash
 # Criar novo projeto Vue com Vite
-npm create vue@latest meu-todo-app
+npm create vue@latest
+
+# Adicionar nome do projeto
+oficinaVue
 
 # Navegar para a pasta do projeto
-cd meu-todo-app
+cd oficinaVue
 
-# Instalar dependências
-npm install
+# Copiar os código no terminal
 ```
 
 ### Passo 2: Instalando Dependências Necessárias
@@ -35,7 +37,7 @@ Cole e execute no terminal:
 
 ```bash
 # Instalar Tailwind CSS
-npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npm install tailwindcss @tailwindcss/postcss postcss
 
 # Instalar Pinia para gerenciamento de estado
 npm install pinia
@@ -44,7 +46,7 @@ npm install pinia
 npm install axios
 
 # Instalar dependências do Tailwind CSS
-npm install @tailwindcss/postcss
+npm install -D autoprefixer postcss
 ```
 
 ### Passo 3: Configuração do Tailwind CSS
@@ -588,5 +590,6 @@ O projeto está configurado para se conectar com uma API em `http://localhost:51
 ---
 
 **Parabéns! Você criou uma aplicação Todo completa com Vue 3, TypeScript e Tailwind CSS!**
+
 
 
