@@ -1,12 +1,12 @@
-# 📝 Todo App - Vue 3 + TypeScript + Vite
+# Todo App - Vue 3 + TypeScript + Vite
 
 Uma aplicação de lista de tarefas (Todo) moderna construída com Vue 3, TypeScript, Vite, Tailwind CSS e Pinia para gerenciamento de estado.
 
-## 🚀 Tutorial Completo - Copie e Cole para Desenvolver
+## Tutorial Completo - Copie e Cole para Desenvolver
 
 Este tutorial foi criado para pessoas que querem desenvolver este projeto copiando e colando código. Siga os passos abaixo para criar sua própria aplicação Todo do zero!
 
-### 📋 Pré-requisitos
+### Pré-requisitos
 
 Antes de começar, certifique-se de ter instalado:
 
@@ -14,7 +14,7 @@ Antes de começar, certifique-se de ter instalado:
 - **npm** ou **yarn** (vem com o Node.js)
 - **Editor de código** (recomendado: VS Code)
 
-### 🛠️ Passo 1: Criando o Projeto
+### Passo 1: Criando o Projeto
 
 Abra o terminal e execute os comandos abaixo:
 
@@ -29,7 +29,7 @@ cd meu-todo-app
 npm install
 ```
 
-### 📦 Passo 2: Instalando Dependências Necessárias
+### Passo 2: Instalando Dependências Necessárias
 
 Cole e execute no terminal:
 
@@ -47,7 +47,7 @@ npm install axios
 npm install @tailwindcss/postcss
 ```
 
-### ⚙️ Passo 3: Configuração do Tailwind CSS
+### Passo 3: Configuração do Tailwind CSS
 
 **3.1. Criar arquivo `tailwind.config.js`:**
 
@@ -76,7 +76,7 @@ export default {
 }
 ```
 
-### 🎨 Passo 4: Configurando Estilos CSS
+### Passo 4: Configurando Estilos CSS
 
 **4.1. Substitua o conteúdo de `src/assets/main.css`:**
 
@@ -100,7 +100,7 @@ body {
 }
 ```
 
-### 🔧 Passo 5: Configuração do Vite
+### Passo 5: Configuração do Vite
 
 **5.1. Substitua o conteúdo de `vite.config.ts`:**
 
@@ -120,7 +120,7 @@ export default defineConfig({
 })
 ```
 
-### 📁 Passo 6: Estrutura de Tipos
+### Passo 6: Estrutura de Tipos
 
 **6.1. Crie a pasta `src/api` e o arquivo `src/api/itemType.ts`:**
 
@@ -132,7 +132,7 @@ export interface itemTodo {
 }
 ```
 
-### 🏪 Passo 7: Gerenciamento de Estado com Pinia
+### Passo 7: Gerenciamento de Estado com Pinia
 
 **7.1. Crie a pasta `src/stores` e o arquivo `src/stores/index.ts`:**
 
@@ -212,7 +212,7 @@ export const useTodoStore = defineStore('todo', {
 })
 ```
 
-### 🧩 Passo 8: Criando os Componentes
+### Passo 8: Criando os Componentes
 
 **8.1. Crie a pasta `src/components` e os seguintes arquivos:**
 
@@ -481,7 +481,7 @@ const confirmDelete = async () => {
 </template>
 ```
 
-### 🏠 Passo 9: Configurando os Arquivos Principais
+### Passo 9: Configurando os Arquivos Principais
 
 **9.1. Substitua o conteúdo de `src/main.ts`:**
 
@@ -546,7 +546,7 @@ onMounted(async () => {
 </template>
 ```
 
-### 🎯 Passo 10: Executando o Projeto
+### Passo 10: Executando o Projeto
 
 ```bash
 npm run dev
@@ -554,7 +554,7 @@ npm run dev
 
 Abra o navegador em: `http://localhost:5173`
 
-### 🚀 Funcionalidades Implementadas
+### Funcionalidades Implementadas
 
 - ✅ **Adicionar tarefas** - Digite e clique em "Adicionar"
 - ✅ **Marcar como concluída** - Clique no checkbox
@@ -566,7 +566,7 @@ Abra o navegador em: `http://localhost:5173`
 - ✅ **Gerenciamento de estado** - Pinia para controle global
 - ✅ **Integração com API** - Axios para requisições HTTP
 
-### 🔗 API Backend
+### API Backend
 
 O projeto está configurado para se conectar com uma API em `http://localhost:5132/api/Todo`.
 
@@ -577,7 +577,7 @@ O projeto está configurado para se conectar com uma API em `http://localhost:51
 - `PATCH /api/Todo/{id}/toggle` - Alternar status
 - `DELETE /api/Todo/{id}` - Excluir todo
 
-### 📚 Recursos de Aprendizado
+### Recursos de Aprendizado
 
 - [Vue 3 Documentation](https://vuejs.org/)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
@@ -587,7 +587,6 @@ O projeto está configurado para se conectar com uma API em `http://localhost:51
 
 ---
 
-**🎉 Parabéns! Você criou uma aplicação Todo completa com Vue 3, TypeScript e Tailwind CSS!**
+**Parabéns! Você criou uma aplicação Todo completa com Vue 3, TypeScript e Tailwind CSS!**
 
-*Desenvolvido com ❤️ para aprendizado através de copiar e colar.*
 
