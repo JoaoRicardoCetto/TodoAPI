@@ -167,9 +167,80 @@ export const useTodoStore = defineStore('todo', {
 - **Actions**: Funções que modificam o estado
 - **Async/Await**: Para operações assíncronas (API)
 
-## FASE 4: Criando Componentes
+## 💚 FASE 4: App.vue
+```vue
 
-### Passo 4.1: Componente para adicionar tarefas
+<script setup lang="ts">
+import FormTodo from './components/FormTodo.vue'
+import ListaTodo from './components/ListaTodo.vue'
+
+import './assets/main.css'
+import { onMounted, ref } from 'vue'
+import { useTodoStore } from '@/stores/useTodoStore'
+
+const todoStore = useTodoStore()
+const isLoading = ref(false)
+
+onMounted(async () => {
+  isLoading.value = true
+
+  await todoStore.fetchTodos()
+
+  setTimeout(() => {
+    isLoading.value = false
+  }, 3000)
+})
+</script>
+
+<template>
+  <div class="min-h-screen flex flex-col items-center justify-center bg-[#e2e3eb] px-4">
+    <div class="bg-[#e2e3eb] mb-8 flex justify-center w-fit rounded-3xl">
+      <img src="@/assets/logo-leds.png" alt="Logo" class="h-16 w-auto" />
+    </div>
+    <div class="w-full max-w-md flex flex-col items-center">
+      <FormTodo class="w-full" />
+      <div class="w-full mt-2">
+        <template v-if="isLoading">
+          <div class="flex justify-center items-center h-24">
+            <img src="@/assets/spinner.svg" alt="Loading..." class="w-8 h-8 animate-spin" />
+          </div>
+        </template>
+        <template v-else>
+          <ListaTodo v-if="todoStore.getTodos.length > 0" />
+          <div v-else class="text-center font-semibold text-lg text-[#211b15]">
+            Você ainda não adicionou nenhuma tarefa.
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</template>
+
+```
+
+## FASE 5: Arquivo main.ts
+```
+import './assets/main.css'
+
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import App from './App.vue'
+//import router from './router'
+import './assets/main.css'
+
+const app = createApp(App)
+const pinia = createPinia()
+
+app.use(pinia)
+//app.use(router)
+
+app.mount('#app')
+```
+
+## 🧩 FASE 6: Criando Componentes
+
+### Passo 6.1: Componente para adicionar tarefas
 
 **Arquivo: `src/components/FormTodo.vue`**
 ```vue
@@ -177,7 +248,6 @@ export const useTodoStore = defineStore('todo', {
 import { ref } from 'vue'
 import { useTodoStore } from '@/stores/useTodoStore'
 
-// Variável reativa para o texto do input
 const descricao = ref('')
 const todoStore = useTodoStore()
 
@@ -185,7 +255,7 @@ async function addNovaTarefa() {
   try {
     if (descricao.value.trim()) {
       await todoStore.addTodo({ descricao: descricao.value })
-      descricao.value = '' // Limpar o campo
+      descricao.value = ''
       console.log('Todo adicionado com sucesso!')
     }
   } catch (error) {
@@ -238,7 +308,214 @@ const todoStore = useTodoStore()
 </template>
 ```
 
-## FASE 5: Configurando o Backend (API Falsa)
+**Arquivo: `src/components/ItemTodo.vue`**
+```vue
+<script setup lang="ts">
+import { defineProps, ref, nextTick } from 'vue'
+import ModalDelete from './ModalDelete.vue'
+import type { itemTodo } from '@/api/itemType'
+import { useTodoStore } from '@/stores/useTodoStore'
+
+const props = defineProps<{
+  todo: itemTodo
+}>()
+
+const todoStore = useTodoStore()
+const isCompleted = ref(props.todo.completo)
+const showModal = ref(false)
+const isEditing = ref(false)
+const descricaoEdit = ref(props.todo.descricao)
+const inputRef = ref<HTMLInputElement | null>(null)
+
+function onCheckClick() {
+  isCompleted.value = !isCompleted.value
+  todoStore.updateToggleTodo(props.todo.id, isCompleted.value)
+}
+
+function onDeleteClick() {
+  showModal.value = true
+}
+
+function onUpdateClick() {
+  if (!isEditing.value) {
+    descricaoEdit.value = props.todo.descricao
+    isEditing.value = true
+    nextTick(() => {
+      inputRef.value?.focus()
+    })
+  } else {
+    isEditing.value = false
+    descricaoEdit.value = props.todo.descricao
+  }
+}
+
+async function onSaveClick() {
+  const newDesc = descricaoEdit.value.trim()
+  if (!newDesc) return
+  if (newDesc === props.todo.descricao) {
+    isEditing.value = false
+    return
+  }
+  await todoStore.updateTodo(props.todo.id, { descricao: newDesc })
+  isEditing.value = false
+}
+
+function handleExcluir() {
+  todoStore.deleteTodo(props.todo.id)
+  showModal.value = false
+}
+
+function handleCancelar() {
+  showModal.value = false
+}
+</script>
+
+<template>
+  <div class="bg-[#cacdda] rounded-lg relative">
+    <div class="flex items-center px-4 py-3 border-b border-gray-400 last:border-b-0">
+      <div class="flex items-center justify-center mr-2">
+        <button
+          class="hover:cursor-pointer"
+          :class="{ 'text-gray-600': !isCompleted, 'text-green-400': isCompleted }"
+          @click="onCheckClick"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="w-full">
+        <template v-if="isEditing">
+          <div class="flex items-center gap-2">
+            <input
+              ref="inputRef"
+              v-model="descricaoEdit"
+              type="text"
+              class="w-full px-2 py-1 border rounded focus:outline-none"
+            />
+            <button
+              class="bg-[#009439] text-white px-3 py-1 rounded font-semibold hover:cursor-pointer"
+              @click="onSaveClick"
+            >
+              Salvar
+            </button>
+          </div>
+        </template>
+        <template v-else>
+          <input
+            type="text"
+            placeholder="Digite a sua tarefa"
+            :value="props.todo.descricao"
+            readonly
+            class="placeholder-gray-500 text-gray-700 font-normal focus:outline-none block w-full appearance-none leading-normal mr-3"
+          />
+        </template>
+      </div>
+
+      <div class="ml-auto flex items-center justify-center">
+        <button class="focus:outline-none hover:cursor-pointer group" @click="onUpdateClick">
+          <svg
+            class="ml-3 h-4 w-4 text-gray-500 group-hover:text-blue-500 transition-colors duration-200"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19.5 3 21l1.5-4L16.5 3.5z" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="ml-auto flex items-center justify-center">
+        <button class="focus:outline-none hover:cursor-pointer group" @click="onDeleteClick">
+          <svg
+            class="ml-3 h-4 w-4 text-gray-500 group-hover:text-[#de0025] transition-colors duration-200"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <ModalDelete
+      v-if="showModal"
+      :mensagem="`Deseja realmente excluir a tarefa: '${props.todo.descricao}'?`"
+      :id="props.todo.id"
+      @excluir="handleExcluir"
+      @cancelar="handleCancelar"
+    />
+  </div>
+</template>
+```
+
+**Arquivo: `src/components/ModalDelete.vue`**
+```vue
+<script setup lang="ts">
+import { defineProps, defineEmits } from 'vue'
+
+const props = defineProps<{
+	mensagem: string
+	id: string
+}>()
+
+const emit = defineEmits(['excluir', 'cancelar'])
+
+function onExcluir() {
+	emit('excluir', props.id)
+}
+function onCancelar() {
+	emit('cancelar')
+}
+</script>
+
+<template>
+	<div class="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm bg-black/10">
+		<div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm flex flex-col items-center">
+			<p class="text-gray-800 text-center mb-6">{{ mensagem }}</p>
+			<div class="flex gap-4 w-full justify-center">
+				<button
+					class="bg-[#de0025] text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition-colors w-fit"
+					@click="onExcluir"
+				>
+					Excluir
+				</button>
+				<button
+					class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md font-semibold hover:bg-gray-400 transition-colors w-fit"
+					@click="onCancelar"
+				>
+					Cancelar
+				</button>
+			</div>
+		</div>
+	</div>
+</template>
+```
+
+## 🔧 FASE 5: Configurando o Backend (API Falsa)
 
 ### Passo 5.1: Criar banco de dados falso
 
@@ -265,7 +542,7 @@ const todoStore = useTodoStore()
 }
 ```
 
-## FASE 6: Executando o Projeto
+## 🚀 FASE 6: Executando o Projeto
 
 ### Passo 6.1: Iniciar o backend
 ```bash
@@ -338,12 +615,8 @@ Continue praticando e evoluindo este projeto. O desenvolvimento web é uma jorna
 
 ---
 
-**Recursos para continuar:**
+**📚 Recursos para continuar:**
 - [Vue.js Docs](https://vuejs.org/)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Pinia Docs](https://pinia.vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-
-
-
-
