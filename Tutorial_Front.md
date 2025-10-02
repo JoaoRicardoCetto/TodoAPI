@@ -12,9 +12,9 @@ npm create vue@latest oficina
 
 # Durante a criação, escolha:
 # ✅ TypeScript
-# ✅ Router (se perguntado)
 # ✅ Pinia
 # ✅ ESLint
+# ❌ Router (se perguntado)
 # ❌ Vitest (pode pular)
 # ❌ End-to-End Testing (pode pular)
 
@@ -343,6 +343,7 @@ Continue praticando e evoluindo este projeto. O desenvolvimento web é uma jorna
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Pinia Docs](https://pinia.vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+
 
 
 
