@@ -2,7 +2,7 @@
 
 Este tutorial vai te ensinar a criar um sistema completo de gerenciamento de tarefas usando Vue.js 3, TypeScript, Tailwind CSS e Pinia. 
 
-## 🚀 FASE 1: Criando o Projeto Base
+## FASE 1: Criando o Projeto Base
 
 ### Passo 1.1: Criar o projeto Vue.js
 
@@ -340,3 +340,4 @@ Continue praticando e evoluindo este projeto. O desenvolvimento web é uma jorna
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Pinia Docs](https://pinia.vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+
