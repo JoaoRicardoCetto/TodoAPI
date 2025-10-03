@@ -34,9 +34,9 @@
               "Title": "TodoController.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Presentation\\Controllers\\TodoController.cs",
               "RelativeDocumentMoniker": "TodoAPI\\Presentation\\Controllers\\TodoController.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Presentation\\Controllers\\TodoController.cs*",
-              "RelativeToolTip": "TodoAPI\\Presentation\\Controllers\\TodoController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Presentation\\Controllers\\TodoController.cs",
+              "RelativeToolTip": "TodoAPI\\Presentation\\Controllers\\TodoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T13:03:44.054Z",
               "EditorCaption": ""
@@ -47,25 +47,23 @@
               "Title": "Todo.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Domain\\Todo.cs",
               "RelativeDocumentMoniker": "TodoAPI\\Domain\\Todo.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Domain\\Todo.cs*",
-              "RelativeToolTip": "TodoAPI\\Domain\\Todo.cs*",
+              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Domain\\Todo.cs",
+              "RelativeToolTip": "TodoAPI\\Domain\\Todo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T13:03:09.268Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T13:03:09.268Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TodoAPI",
+              "Title": "TodoAPI.csproj",
               "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\TodoAPI.csproj",
               "RelativeDocumentMoniker": "TodoAPI\\TodoAPI.csproj",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\TodoAPI.csproj*",
-              "RelativeToolTip": "TodoAPI\\TodoAPI.csproj*",
+              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\TodoAPI.csproj",
+              "RelativeToolTip": "TodoAPI\\TodoAPI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-22T13:02:29.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T13:02:29.075Z"
             },
             {
               "$type": "Document",
@@ -73,12 +71,11 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Program.cs",
               "RelativeDocumentMoniker": "TodoAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Program.cs*",
-              "RelativeToolTip": "TodoAPI\\Program.cs*",
+              "ToolTip": "C:\\Users\\usuario\\Desktop\\LEDS\\TodoAPI\\backend\\TodoAPI\\Program.cs",
+              "RelativeToolTip": "TodoAPI\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAwwCYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T12:27:25.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T12:27:25.825Z"
             }
           ]
         }
